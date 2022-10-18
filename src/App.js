@@ -1,23 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import Card from './components/Card';
+import Iphone12proCanvas from './components/phones/apple/Iphone12proCanvas';
+import Iphone14Canvas from './components/phones/apple/Iphone14Canvas';
+import GalaxyS21UltraCanvas from './components/phones/galaxy/GalaxyS21UltraCanvas';
+import GalaxyS8UltraCanvas from './components/phones/galaxy/GalaxyS8UltraCanvas';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='flex h-screen items-center justify-center gap-8 '>
+      <Card text='Apple' />
+      <Card text='Galaxy' />
     </div>
   );
 }
