@@ -1,15 +1,16 @@
-import Card from './components/Card';
-import Iphone12proCanvas from './components/phones/apple/Iphone12proCanvas';
-import Iphone14Canvas from './components/phones/apple/Iphone14Canvas';
-import GalaxyS21UltraCanvas from './components/phones/galaxy/GalaxyS21UltraCanvas';
-import GalaxyS8UltraCanvas from './components/phones/galaxy/GalaxyS8UltraCanvas';
+import { Routes, Route } from 'react-router-dom';
+
+import LandingPage from './pages/LandingPage';
+import ApplePage from './pages/ApplePage';
+import GalaxyPage from './pages/GalaxyPage';
 
 function App() {
   return (
-    <div className='flex h-screen items-center justify-center gap-8 '>
-      <Card text='Apple' />
-      <Card text='Galaxy' />
-    </div>
+    <Routes>
+      <Route path='/' element={<LandingPage />} />
+      <Route path='/apple' element={<ApplePage />} />
+      <Route path='/galaxy' element={<GalaxyPage />} />
+    </Routes>
   );
 }
 

@@ -6,7 +6,7 @@ import Lights from '../../Lights';
 
 const Iphone12proCanvas = () => {
   return (
-    <div className='w-[300px] h-[500px] '>
+    <div className='w-[300px] h-[500px]'>
       <Canvas shadows>
         <OrbitControls
           enableZoom={false}

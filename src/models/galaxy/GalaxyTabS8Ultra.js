@@ -4,10 +4,10 @@ import { useFrame } from '@react-three/fiber';
 
 export function GalaxyTabS8Ultra(props) {
   const ref = useRef(null);
-  useFrame(() => (ref.current.rotation.y += 0.01));
+  useFrame(() => (ref.current.rotation.y += 0.006));
   const { nodes, materials } = useGLTF('/galaxy/galaxy_tab_s8_ultra.glb');
   return (
-    <group {...props} dispose={null} ref={ref}>
+    <group {...props} dispose={null} ref={ref} position={[0, -2, 0]}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
           <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
