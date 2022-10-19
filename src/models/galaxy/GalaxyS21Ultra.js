@@ -2,10 +2,11 @@ import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 
-export function GalaxyS21Ultra(props) {
+export function GalaxyS21Ultra({ color, rotation }, props) {
   const { nodes, materials } = useGLTF('/galaxy/galaxy_s21_ultra.glb');
   const ref = useRef(null);
-  useFrame(() => (ref.current.rotation.y += 0.01));
+  useFrame(() => (ref.current.rotation.y += rotation ? 0.01 : 0));
+
   return (
     <group
       ref={ref}
@@ -22,6 +23,7 @@ export function GalaxyS21Ultra(props) {
                 castShadow
                 receiveShadow
                 geometry={nodes.CamModuleFrame_BodyFrame_0.geometry}
+                material-color={color}
                 material={materials.BodyFrame}
               />
             </group>
@@ -30,6 +32,7 @@ export function GalaxyS21Ultra(props) {
                 castShadow
                 receiveShadow
                 geometry={nodes.CamModule_CameraModule_0.geometry}
+                material-color={color}
                 material={materials.CameraModule}
               />
             </group>
@@ -40,6 +43,7 @@ export function GalaxyS21Ultra(props) {
                     castShadow
                     receiveShadow
                     geometry={nodes.Lens2_Lens_0.geometry}
+                    material-color={color}
                     material={materials.Lens}
                   />
                 </group>
@@ -47,24 +51,28 @@ export function GalaxyS21Ultra(props) {
                   castShadow
                   receiveShadow
                   geometry={nodes.Camera2_BodyFrame_0.geometry}
+                  material-color={color}
                   material={materials.BodyFrame}
                 />
                 <mesh
                   castShadow
                   receiveShadow
                   geometry={nodes.Camera2_Camera2_0.geometry}
+                  material-color={color}
                   material={materials.Camera2}
                 />
                 <mesh
                   castShadow
                   receiveShadow
                   geometry={nodes.Camera2_Camera3_0.geometry}
+                  material-color={color}
                   material={materials.Camera3}
                 />
                 <mesh
                   castShadow
                   receiveShadow
                   geometry={nodes.Camera2_Glass_0.geometry}
+                  material-color={color}
                   material={materials.Glass}
                 />
               </group>
@@ -74,12 +82,14 @@ export function GalaxyS21Ultra(props) {
                     castShadow
                     receiveShadow
                     geometry={nodes.Lens4_Camera2_0.geometry}
+                    material-color={color}
                     material={materials.Camera2}
                   />
                   <mesh
                     castShadow
                     receiveShadow
                     geometry={nodes.Lens4_Lens_0.geometry}
+                    material-color={color}
                     material={materials.Lens}
                   />
                 </group>
@@ -87,24 +97,28 @@ export function GalaxyS21Ultra(props) {
                   castShadow
                   receiveShadow
                   geometry={nodes.Camera4_BodyFrame_0.geometry}
+                  material-color={color}
                   material={materials.BodyFrame}
                 />
                 <mesh
                   castShadow
                   receiveShadow
                   geometry={nodes.Camera4_Camera3_0.geometry}
+                  material-color={color}
                   material={materials.Camera3}
                 />
                 <mesh
                   castShadow
                   receiveShadow
                   geometry={nodes.Camera4_Camera2_0.geometry}
+                  material-color={color}
                   material={materials.Camera2}
                 />
                 <mesh
                   castShadow
                   receiveShadow
                   geometry={nodes.Camera4_Glass_0.geometry}
+                  material-color={color}
                   material={materials.Glass}
                 />
               </group>
@@ -113,24 +127,28 @@ export function GalaxyS21Ultra(props) {
                   castShadow
                   receiveShadow
                   geometry={nodes.Sensor_BodyFrame_0.geometry}
+                  material-color={color}
                   material={materials.BodyFrame}
                 />
                 <mesh
                   castShadow
                   receiveShadow
                   geometry={nodes.Sensor_Camera2_0.geometry}
+                  material-color={color}
                   material={materials.Camera2}
                 />
                 <mesh
                   castShadow
                   receiveShadow
                   geometry={nodes.Sensor_Red_0.geometry}
+                  material-color={color}
                   material={materials.material}
                 />
                 <mesh
                   castShadow
                   receiveShadow
                   geometry={nodes.Sensor_Glass_0.geometry}
+                  material-color={color}
                   material={materials.Glass}
                 />
               </group>
@@ -139,18 +157,21 @@ export function GalaxyS21Ultra(props) {
                   castShadow
                   receiveShadow
                   geometry={nodes.Flashh_BodyFrame_0.geometry}
+                  material-color={color}
                   material={materials.BodyFrame}
                 />
                 <mesh
                   castShadow
                   receiveShadow
                   geometry={nodes.Flashh_Glass_0.geometry}
+                  material-color={color}
                   material={materials.Glass}
                 />
                 <mesh
                   castShadow
                   receiveShadow
                   geometry={nodes.Flashh_Flash_0.geometry}
+                  material-color={color}
                   material={materials.Flash}
                 />
               </group>
@@ -159,30 +180,35 @@ export function GalaxyS21Ultra(props) {
                   castShadow
                   receiveShadow
                   geometry={nodes.Camera3_BodyFrame_0.geometry}
+                  material-color={color}
                   material={materials.BodyFrame}
                 />
                 <mesh
                   castShadow
                   receiveShadow
                   geometry={nodes.Camera3_Camera2_0.geometry}
+                  material-color={color}
                   material={materials.Camera2}
                 />
                 <mesh
                   castShadow
                   receiveShadow
                   geometry={nodes.Camera3_Camera3_0.geometry}
+                  material-color={color}
                   material={materials.Camera3}
                 />
                 <mesh
                   castShadow
                   receiveShadow
                   geometry={nodes.Camera3_Glass_0.geometry}
+                  material-color={color}
                   material={materials.Glass}
                 />
                 <mesh
                   castShadow
                   receiveShadow
                   geometry={nodes.Camera3_Lens001_0.geometry}
+                  material-color={color}
                   material={materials['Lens.001']}
                 />
               </group>
@@ -191,12 +217,14 @@ export function GalaxyS21Ultra(props) {
                   castShadow
                   receiveShadow
                   geometry={nodes.Lens1_Camera2_0.geometry}
+                  material-color={color}
                   material={materials.Camera2}
                 />
                 <mesh
                   castShadow
                   receiveShadow
                   geometry={nodes.Lens1_Lens_0.geometry}
+                  material-color={color}
                   material={materials.Lens}
                 />
               </group>
@@ -214,6 +242,7 @@ export function GalaxyS21Ultra(props) {
                     castShadow
                     receiveShadow
                     geometry={nodes.LensFC_Lens_0.geometry}
+                    material-color={color}
                     material={materials.Lens}
                   />
                 </group>
@@ -221,18 +250,21 @@ export function GalaxyS21Ultra(props) {
                   castShadow
                   receiveShadow
                   geometry={nodes.FrontCamera_BodyFrame_0.geometry}
+                  material-color={color}
                   material={materials.BodyFrame}
                 />
                 <mesh
                   castShadow
                   receiveShadow
                   geometry={nodes.FrontCamera_Camera3_0.geometry}
+                  material-color={color}
                   material={materials.Camera3}
                 />
                 <mesh
                   castShadow
                   receiveShadow
                   geometry={nodes.FrontCamera_Glass_0.geometry}
+                  material-color={color}
                   material={materials.Glass}
                 />
               </group>
@@ -240,24 +272,28 @@ export function GalaxyS21Ultra(props) {
                 castShadow
                 receiveShadow
                 geometry={nodes.Camera1_BodyFrame_0.geometry}
+                material-color={color}
                 material={materials.BodyFrame}
               />
               <mesh
                 castShadow
                 receiveShadow
                 geometry={nodes.Camera1_Camera2_0.geometry}
+                material-color={color}
                 material={materials.Camera2}
               />
               <mesh
                 castShadow
                 receiveShadow
                 geometry={nodes.Camera1_Camera3_0.geometry}
+                material-color={color}
                 material={materials.Camera3}
               />
               <mesh
                 castShadow
                 receiveShadow
                 geometry={nodes.Camera1_Glass_0.geometry}
+                material-color={color}
                 material={materials.Glass}
               />
             </group>
@@ -265,18 +301,21 @@ export function GalaxyS21Ultra(props) {
               castShadow
               receiveShadow
               geometry={nodes.Back_Back_0.geometry}
+              material-color={color}
               material={materials.Back}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.Screen_Screen_0.geometry}
+              material-color={color}
               material={materials.Screen}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.ScreenBezel_ScreenBezel_0.geometry}
+              material-color={color}
               material={materials.ScreenBezel}
             />
             <group
@@ -288,6 +327,7 @@ export function GalaxyS21Ultra(props) {
                 castShadow
                 receiveShadow
                 geometry={nodes.VolumeButton__BodyFrame_0.geometry}
+                material-color={color}
                 material={materials.BodyFrame}
               />
             </group>
@@ -300,6 +340,7 @@ export function GalaxyS21Ultra(props) {
                 castShadow
                 receiveShadow
                 geometry={nodes.PowerButton_BodyFrame_0.geometry}
+                material-color={color}
                 material={materials.BodyFrame}
               />
             </group>
@@ -312,6 +353,7 @@ export function GalaxyS21Ultra(props) {
                 castShadow
                 receiveShadow
                 geometry={nodes.Logo_BodyFrame_0.geometry}
+                material-color={color}
                 material={materials.BodyFrame}
               />
             </group>
@@ -319,24 +361,28 @@ export function GalaxyS21Ultra(props) {
               castShadow
               receiveShadow
               geometry={nodes.S21ULTRA_BodyFrame_0.geometry}
+              material-color={color}
               material={materials.BodyFrame}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.S21ULTRA_Chrome_0.geometry}
+              material-color={color}
               material={materials.Chrome}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.S21ULTRA_Antennas_0.geometry}
+              material-color={color}
               material={materials.Antennas}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.S21ULTRA_Speaker_0.geometry}
+              material-color={color}
               material={materials.Speaker}
             />
           </group>

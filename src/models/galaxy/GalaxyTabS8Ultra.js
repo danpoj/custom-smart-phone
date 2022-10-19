@@ -2,9 +2,9 @@ import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 
-export function GalaxyTabS8Ultra(props) {
+export function GalaxyTabS8Ultra({ color, rotation }, props) {
   const ref = useRef(null);
-  useFrame(() => (ref.current.rotation.y += 0.006));
+  useFrame(() => (ref.current.rotation.y += rotation ? 0.004 : 0));
   const { nodes, materials } = useGLTF('/galaxy/galaxy_tab_s8_ultra.glb');
   return (
     <group {...props} dispose={null} ref={ref} position={[0, -2, 0]}>
@@ -15,174 +15,203 @@ export function GalaxyTabS8Ultra(props) {
               castShadow
               receiveShadow
               geometry={nodes.CameraModule_CamFrame_0.geometry}
+              material-color={color}
               material={materials.CamFrame}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.CameraModule_CamFrame2_0.geometry}
+              material-color={color}
               material={materials.CamFrame2}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.CameraModule_CamBackground_0.geometry}
+              material-color={color}
               material={materials.CamBackground}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.CameraModule_CamGlass_0.geometry}
+              material-color={color}
               material={materials.CamGlass}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.Camera_LensFrame_0.geometry}
+              material-color={color}
               material={materials.LensFrame}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.Camera_LensBlack_0.geometry}
+              material-color={color}
               material={materials.LensBlack}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.Camera_LensGray_0.geometry}
+              material-color={color}
               material={materials.LensGray}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.MicFlash_MicFlashBody_0.geometry}
+              material-color={color}
               material={materials.MicFlashBody}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.MicFlash_Flash_0.geometry}
+              material-color={color}
               material={materials.Flash}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.MicFlash_Mic_0.geometry}
+              material-color={color}
               material={materials.material}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.Lens1_Lens_0.geometry}
+              material-color={color}
               material={materials.Lens}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.Lens2_Lens_0.geometry}
+              material-color={color}
               material={materials.Lens}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.PenCharge_Stripe_0.geometry}
+              material-color={color}
               material={materials.Stripe}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.Screen_Wallpaper_0.geometry}
+              material-color={color}
               material={materials.Wallpaper}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.Lens3_Lens_0.geometry}
+              material-color={color}
               material={materials.Lens}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.Lens4_Lens_0.geometry}
+              material-color={color}
               material={materials.Lens}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.Button_Body_0.geometry}
+              material-color={color}
               material={materials.Body}
             />
             {/* <mesh
               castShadow
               receiveShadow
               geometry={nodes.PenBody_PenBody_0.geometry}
+              material-color={color}
               material={materials.PenBody}
             /> */}
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.PenBody_PenTip_0.geometry}
+              material-color={color}
               material={materials.PenTip}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.SamsungLogo_Text_0.geometry}
+              material-color={color}
               material={materials.Text}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.akg_Text_0.geometry}
+              material-color={color}
               material={materials.Text}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.Body_Body_0.geometry}
+              material-color={color}
               material={materials.Body}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.Body_Bezel_0.geometry}
+              material-color={color}
               material={materials.Bezel}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.Body_Body2_0.geometry}
+              material-color={color}
               material={materials.Body2}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.Body_LensGray_0.geometry}
+              material-color={color}
               material={materials.LensGray}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.Body_Antenna_0.geometry}
+              material-color={color}
               material={materials.Antenna}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.Body_Body3_0.geometry}
+              material-color={color}
               material={materials.Body3}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.Body_CamGlass_0.geometry}
+              material-color={color}
               material={materials.CamGlass}
             />
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.Body_Mic_0.geometry}
+              material-color={color}
               material={materials.material}
             />
           </group>

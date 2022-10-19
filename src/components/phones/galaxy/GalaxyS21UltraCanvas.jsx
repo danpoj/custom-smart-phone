@@ -4,18 +4,25 @@ import { Canvas } from '@react-three/fiber';
 import { GalaxyS21Ultra } from '../../../models/galaxy/GalaxyS21Ultra';
 import Lights from '../../Lights';
 
-const GalaxyS21UltraCanvas = () => {
+const GalaxyS21UltraCanvas = ({
+  width = 'w-[300px]',
+  height = 'h-[500px]',
+  rotation = true,
+  color,
+  minAngle = Math.PI / 2,
+  maxAngle = Math.PI / 2,
+}) => {
   return (
-    <div className='w-[300px] h-[500px] '>
+    <div className={`${width} ${height}`}>
       <Canvas shadows>
         <OrbitControls
           enableZoom={false}
-          minPolarAngle={Math.PI / 2}
-          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={minAngle}
+          maxPolarAngle={maxAngle}
         />
         <Lights />
         <Suspense fallback={null}>
-          <GalaxyS21Ultra />
+          <GalaxyS21Ultra color={color} rotation={rotation} />
         </Suspense>
       </Canvas>
     </div>

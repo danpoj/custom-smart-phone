@@ -4,18 +4,25 @@ import { Suspense } from 'react';
 import Lights from '../../Lights';
 import { GalaxyTabS8Ultra } from '../../../models/galaxy/GalaxyTabS8Ultra';
 
-const GalaxyS8UltraCanvas = () => {
+const GalaxyS8UltraCanvas = ({
+  width = 'w-[500px]',
+  height = 'h-[500px]',
+  rotation = true,
+  color,
+  minAngle = Math.PI / 2,
+  maxAngle = Math.PI / 2,
+}) => {
   return (
-    <div className='w-[500px] h-[500px]  '>
+    <div className={`${width} ${height}`}>
       <Canvas shadows>
         <OrbitControls
           enableZoom={false}
-          minPolarAngle={Math.PI / 2}
-          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={minAngle}
+          maxPolarAngle={maxAngle}
         />
         <Lights />
         <Suspense fallback={null}>
-          <GalaxyTabS8Ultra />
+          <GalaxyTabS8Ultra color={color} rotation={rotation} />
         </Suspense>
       </Canvas>
     </div>

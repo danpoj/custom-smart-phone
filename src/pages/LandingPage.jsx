@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const LandingPage = () => {
   return (
     <div className='flex flex-col h-screen items-center justify-center gap-10'>
-      <h1 className='font-mono text-2xl'>custom your phone</h1>
+      <h1 className='font-mono text-2xl'>customize it</h1>
       <div className='flex gap-4'>
         <Link
           to='/apple'

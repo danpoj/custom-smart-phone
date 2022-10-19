@@ -15,12 +15,12 @@ const GalaxyPage = () => {
           <h3 className='font-mono'>Samsung</h3>
         </div>
         <Link
-          to='/apple/12-pro'
+          to='/galaxy/s21-ultra'
           className='rounded relative py-3 px-4 group shadow-lg select-none mt-4'
         >
           <div className='absolute -inset-0 bg-rose-400 w-0 group-hover:w-full transition-all -z-10 duration-300 rounded'></div>
           <span className='font-mono text-stone-700 group-hover:text-stone-100 transition duration-300'>
-            Let's Customize
+            Customize It
           </span>
         </Link>
       </div>
@@ -34,12 +34,12 @@ const GalaxyPage = () => {
           <h3 className='font-mono'>Samsung</h3>
         </div>
         <Link
-          to='/apple/12-pro'
+          to='/galaxy/tab-s8-ultra'
           className='rounded relative py-3 px-4 group shadow-lg select-none mt-4'
         >
           <div className='absolute -inset-0 bg-rose-400 w-0 group-hover:w-full transition-all -z-10 duration-300 rounded'></div>
           <span className='font-mono text-stone-700 group-hover:text-stone-100 transition duration-300'>
-            Let's Customize
+            Customize It
           </span>
         </Link>
       </div>

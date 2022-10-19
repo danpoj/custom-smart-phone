@@ -4,18 +4,25 @@ import { Suspense } from 'react';
 import { Iphone12pro } from '../../../models/apple/Iphone12pro';
 import Lights from '../../Lights';
 
-const Iphone12proCanvas = () => {
+const Iphone12proCanvas = ({
+  width = 'w-[300px]',
+  height = 'h-[500px]',
+  rotation = true,
+  color,
+  minAngle = Math.PI / 2,
+  maxAngle = Math.PI / 2,
+}) => {
   return (
-    <div className='w-[300px] h-[500px]'>
+    <div className={`${width} ${height}`}>
       <Canvas shadows>
         <OrbitControls
           enableZoom={false}
-          minPolarAngle={Math.PI / 2}
-          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={minAngle}
+          maxPolarAngle={maxAngle}
         />
         <Lights />
         <Suspense fallback={null}>
-          <Iphone12pro />
+          <Iphone12pro color={color} rotation={rotation} />
         </Suspense>
       </Canvas>
     </div>
